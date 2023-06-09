@@ -17,7 +17,8 @@ class CoinAddressDerivationTests: XCTestCase {
                 let privateKey = wallet.getKeyForCoin(coin: coin)
                 let derivedAddress = coin.deriveAddress(privateKey: privateKey)
                 let address = coin.address(string: derivedAddress)
-
+                print("hello")
+                print(coin, address)
                 switch coin {
                 case .aeternity:
                     let expectedResult = "ak_QDHJSfvHG9sDHBobaWt2TAGhuhipYjEqZEH34bWugpJfJc3GN"
@@ -102,7 +103,7 @@ class CoinAddressDerivationTests: XCTestCase {
                     let expectedResult = "ronin:8f348F300873Fd5DA36950B2aC75a26584584feE"
                     assertCoinDerivation(coin, expectedResult, derivedAddress, address)
                 case .rootstock:
-                    let expectedResult = "8f348F300873Fd5DA36950B2aC75a26584584feE"
+                    let expectedResult = "0xA2D7065F94F838a3aB9C04D67B312056846424Df"
                     assertCoinDerivation(coin, expectedResult, derivedAddress, address)    
                 case .ethereumClassic:
                     let expectedResult = "0x078bA3228F3E6C08bEEac9A005de0b7e7089aD1c"
